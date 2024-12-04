@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Music Player</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="bg-gray-900 text-white flex items-center justify-center h-screen"
+  >
+    <div
+      class="music-player w-full max-w-md bg-gray-800 p-6 rounded-lg shadow-lg text-center relative"
+    >
+      <h1 class="text-2xl font-bold mb-4">Music Player</h1>
+      <div class="song-info mb-4">
+        <img id="song-image" class="song-image" src="" alt="Album Art" />
+        <h2 id="song-title" class="text-xl font-semibold">No song selected</h2>
+        <p id="artist-album" class="text-sm text-gray-400">Artist - Album</p>
+      </div>
+      <audio id="audio-player" class="hidden"></audio>
+      <div class="controls flex justify-center items-center gap-4 mb-4">
+        <!-- Previous Button with Bootstrap Icon -->
+        <button id="prev-btn" class="text-2xl hover:text-green-500">
+          <i class="bi bi-skip-backward-fill"></i>
+        </button>
+
+        <!-- Play/Pause Button with Bootstrap Icon -->
+        <button id="play-pause-btn" class="text-3xl hover:text-green-500">
+          <i class="bi bi-play-fill"></i>
+        </button>
+
+        <!-- Next Button with Bootstrap Icon -->
+        <button id="next-btn" class="text-2xl hover:text-green-500">
+          <i class="bi bi-skip-forward-fill"></i>
+        </button>
+      </div>
+      <!-- Progress Bar Section -->
+      <div class="flex flex-col items-center mb-4">
+        <input
+          id="progress-bar"
+          type="range"
+          min="0"
+          value="0"
+          class="w-full h-2 bg-gray-300 rounded-full"
+        />
+        <div class="flex justify-between w-full text-xs mt-2">
+          <!-- Current Time (Left) -->
+          <span id="current-time" class="text-white">0:00</span>
+          <!-- Total Duration (Right) -->
+          <span id="total-duration" class="text-white">0:00</span>
+        </div>
+      </div>
+
+      <div class="volume-control flex items-center justify-center gap-2 mb-4">
+        <label for="volume-slider" class="text-sm">Volume:</label>
+        <input
+          type="range"
+          id="volume-slider"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          class="w-1/2 h-2 bg-gray-700 rounded-lg cursor-pointer"
+        />
+      </div>
+      <!-- Playlist Drawer Trigger -->
+      <button
+        id="playlist-menu-btn"
+        class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+      >
+        Open Playlist
+      </button>
+
+      <!-- Drawer -->
+      <div
+        id="playlist-drawer"
+        class="fixed inset-y-0 right-0 w-64 bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300"
+      >
+        <div
+          class="p-4 border-b border-gray-700 flex justify-between items-center"
+        >
+          <h3 class="text-lg font-medium">Playlist</h3>
+          <button
+            id="close-drawer-btn"
+            class="text-white hover:text-red-500 text-xl"
+          >
+            ✖️
+          </button>
+        </div>
+        <ul id="playlist" class="p-4 space-y-2">
+          <!-- Songs will be dynamically loaded here -->
+        </ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

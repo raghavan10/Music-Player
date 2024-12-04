@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e2f;
+    color: #ffffff;
+}
+
+.music-player {
+    width: 90%;
+    max-width: 400px;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+.controls button {
+    font-size: 1.5rem;
+    background: none;
+    color: #fff;
+    border: none;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    color: #4caf50;
+}
+
+.progress-container {
+    margin: 15px 0;
+}
+
+#progress-bar {
+    width: 100%;
+}
+
+.volume-control {
+    margin: 10px 0;
+}
+
+.playlist {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.playlist ul {
+    list-style: none;
+    padding: 0;
+}
+
+.playlist li {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-bottom: 1px solid #555;
+}
+
+.playlist li:hover {
+    background: #4caf50;
+    color: #fff;
+}
+
+.song-info {
+    margin-bottom: 1rem;
+    /* Adds space below the container */
+    text-align: center;
+    /* Centers content inside the container */
+}
+
+.song-image {
+    width: 300px;
+    /* Adjust width */
+    height: auto;
+    /* Adjust height */
+    margin: 0 auto 1.5rem;
+    /* Centers the image and adds bottom margin */
+    border-radius: 12px;
+    /* Rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Adds a shadow for depth */
+    object-fit: cover;
+    /* Ensures the image maintains its aspect ratio */
+}
+
+.song-title {
+    font-size: 1.5rem;
+    /* Larger font size for the song title */
+    font-weight: bold;
+    /* Makes the text bold */
+}
+
+.artist-album {
+    font-size: 0.875rem;
+    /* Slightly smaller text for artist and album */
+    color: #9ca3af;
+    /* Subtle gray color for secondary text */
+}
+
+#playlist-drawer {
+    overflow-y: auto;
+}
