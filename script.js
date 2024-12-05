@@ -110,7 +110,7 @@ function setRandomImage() {
   }
 
   // Load a song
-  function loadSong(index) {
+  function loadSong(index,init=true) {
     const song = songs[index];
     currentSongIndex = index;
     audioPlayer.src = song.src;
@@ -118,8 +118,9 @@ function setRandomImage() {
     artistAlbum.textContent = `${song.artist} - ${song.album}`;
     audioPlayer.play();
     setRandomImage(); // Set a random image for the song
-    updatePlayPauseIcon(true);
+    init?updatePlayPauseIcon(true):updatePlayPauseIcon(false);
   }
+
 
   // Update play/pause button icon
   function updatePlayPauseIcon(isPlaying) {
@@ -200,5 +201,5 @@ function setRandomImage() {
 
   // Initialize
   loadPlaylist();
-  loadSong(currentSongIndex);
+  loadSong(currentSongIndex,init=false);
 });
